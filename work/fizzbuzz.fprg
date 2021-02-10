@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="farme"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-02-10 09:11:11 AM"/>
+        <attribute name="created" value="ZmFybWU7REVTS1RPUC1EQU5JRUw7MjAyMS0wMi0wOTswNDowMTozNyBQTTsyODEw"/>
+        <attribute name="edited" value="ZmFybWU7REVTS1RPUC1EQU5JRUw7MjAyMS0wMi0xMDswOToxMToxMSBBTTsxMDsyOTQx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="running" type="Boolean" array="False" size=""/>
+            <assign variable="running" expression="true"/>
+            <while expression="running">
+                <declare name="num" type="Integer" array="False" size=""/>
+                <output expression="&quot;Enter starting number (1 or greater)&quot;" newline="True"/>
+                <input variable="num"/>
+                <declare name="i" type="Integer" array="False" size=""/>
+                <for variable="i" start="1" end="num" direction="inc" step="1">
+                    <output expression="fizzBuzzChecker(i)" newline="True"/>
+                </for>
+            </while>
+        </body>
+    </function>
+    <function name="fizzBuzzChecker" type="String" variable="fizzBuzzString">
+        <parameters>
+            <parameter name="num" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="fizzBuzzString" type="String" array="False" size=""/>
+            <assign variable="fizzBuzzString" expression="&quot;&quot;"/>
+            <if expression="num &gt;= 1">
+                <then>
+                    <if expression="num % 15 == 0">
+                        <then>
+                            <assign variable="fizzBuzzString" expression="&quot;FizzBuzz&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="num % 3 == 0">
+                                <then>
+                                    <assign variable="fizzBuzzString" expression="&quot;Fizz&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="num % 5 == 0">
+                                        <then>
+                                            <assign variable="fizzBuzzString" expression="&quot;Buzz&quot;"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="fizzBuzzString" expression="ToString(num)"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
